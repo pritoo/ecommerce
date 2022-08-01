@@ -12,9 +12,11 @@ process.on("uncaughtException",(err)=>{
 //config
 dotenv.config({path:"ecommerce-backend/config/config.env"});
 
+console.log(process.env.PORT)
+
 //connect to database
 connectDatabase();
-console.log(process.env.PORT);
+//console.log(process.env.PORT);
 const server = app.listen(process.env.PORT,()=>{
    console.log(`server is running on http://localhost:${process.env.PORT}`) 
 })

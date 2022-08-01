@@ -3,6 +3,7 @@ const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+
 const userSchema = mongoose.Schema({
     name:{
         type:String,
@@ -20,7 +21,7 @@ const userSchema = mongoose.Schema({
     password:{
         type:String,
         required:[true,"please enter Your password"],
-        maxLength:[8,"password should be greater than 8 character"],
+        minLength:[8,"password should be greater than 8 character"],
         select:false
     },
 

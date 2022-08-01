@@ -14,7 +14,7 @@ class ApiFeatures{
             },
         }:{};
 
-        console.log(keyword)
+        //console.log(keyword)
         this.query=this.query.find({...keyword});
         return this;
 
@@ -23,7 +23,7 @@ class ApiFeatures{
 
     filter(){
             const queryCopy = {...this.querystr}
-            console.log(queryCopy)
+            //console.log(queryCopy)
             //remove some feilds from category
             const removeFeilds =["category","page","limit"]
 
@@ -33,7 +33,7 @@ class ApiFeatures{
             //filter for price and rating
             var querystr= JSON.stringify(queryCopy)
             querystr=querystr.replace(/\b(gt|gte|lt|lte)\b/g,(key)=>`$${key}`);
-            console.log(querystr)
+            //console.log(querystr)
 
             this.query=this.query.find(JSON.parse(querystr))
             return this;
